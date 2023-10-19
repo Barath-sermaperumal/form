@@ -1,0 +1,180 @@
+<section class="text-center">
+  <div class="container">
+    <div
+      class="card mx-4 mx-md-5 shadow-5-strong mb-5"
+      style="
+        margin-top: 15px;
+
+        background: hsla(0, 0%, 100%, 0.8);
+
+        backdrop-filter: blur(30px);
+      "
+    >
+      <div class="card-body py-5 px-md-5">
+        <div class="row d-flex justify-content-center">
+          <div class="col-10">
+            <div class="text-center">
+              <h3>Todo Application (Forms)</h3>
+
+              <div class="text-start">
+                This application has the following sections
+
+                <ul>
+                  <li>
+                    Input Fields
+
+                    <ol>
+                      <li>Name</li>
+
+                      <li>Phone Number</li>
+
+                      <li>Email</li>
+                    </ol>
+                  </li>
+
+                  <li>Add Button</li>
+
+                  <li>Edit</li>
+
+                  <li>Delete</li>
+                </ul>
+              </div>
+
+              <div class="text-start">
+                Technology used to build this application
+
+                <ul>
+                  <li>Angular</li>
+
+                  <li>HTML</li>
+
+                  <li>Bootstrap</li>
+
+                  <li>Typescript</li>
+
+                  <li>CSS</li>
+                </ul>
+              </div>
+
+              <div class="text-start">
+                Steps used to build this application:-
+
+                <ol>
+                  <li>To add Item to the list.</li>
+
+                  <li>
+                    To Edit the item in the list. Edit button will
+                    <span class="fw-bold"
+                      >prefill the details of the item.</span
+                    >
+                  </li>
+
+                  <li>To Delete the item from the list.</li>
+                </ol>
+              </div>
+            </div>
+
+            <br />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="h-100 h-custom" style="background-color: #9c9c9c">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12">
+        <div
+          class="card card-registration card-registration-2"
+          style="border-radius: 15px"
+        >
+          <div class="card-body p-0">
+            <div class="row g-0">
+              <div class="col-lg-8">
+                <div class="p-5">
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-5"
+                  >
+                    <h1 class="fw-bold mb-0 text-black">View Table</h1>
+                  </div>
+                  <hr class="my-4" />
+
+                  <table class="table">
+                    <thead class="table-dark">
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Email</th>
+                        <th scope="col" class="ps-5">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let detail of details">
+                        <td scope="row">{{ detail.name }}</td>
+                        <td>{{ detail.phone }}</td>
+                        <td>{{ detail.email }}</td>
+                        <td class="p-1">
+                          <button
+                            class="btn btn-warning me-3 p-1 px-3"
+                            (click)="edit(detail.id)"
+                          >
+                            Edit
+                          </button>
+                          <button
+                            class="btn btn-danger p-1 px-3"
+                            (click)="delete(detail.id)"
+                          >
+                            Delete
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="col-lg-4 bg-grey">
+                <div class="p-5">
+                  <h3 class="fw-bold mt-2 pt-1">Details</h3>
+                  <hr class="my-4" />
+
+                  <div>
+                    <div class="form-outline">
+                      <input
+                        type="text"
+                        [(ngModel)]="name"
+                        class="form-control form-control-lg"
+                        placeholder="Enter your name"
+                      /><br />
+                      <input
+                        type="text"
+                        [(ngModel)]="phone"
+                        class="form-control form-control-lg"
+                        placeholder="Enter your number"
+                      /><br />
+                      <input
+                        type="email"
+                        [(ngModel)]="email"
+                        class="form-control form-control-lg"
+                        placeholder="Enter your email"
+                      /><br />
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="btn btn-dark btn-block btn-lg"
+                    data-mdb-ripple-color="dark"
+                    (click)="add()"
+                  >
+                    Register
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
